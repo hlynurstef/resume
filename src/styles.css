@@ -10,13 +10,36 @@ app-root {
 		Cantarell,
 		Helvetica,
 		sans-serif;
-	font-size: 2.5em;	
+  font-size: 2em;
+}
+
+.footer {
+  color: ghostwhite;
+  font-size: 1em;
+  text-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  width: 100vw;
+  height: 12vh;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  background-image: -webkit-gradient(
+    linear, left bottom, left top, from(rgba(100,100,100,0.5)),
+    to(rgba(100,100,100,0))
+  );
+}
+
+.no-margin {
+  margin: 0;
 }
 
 body {
-	background: darkslateblue;
+	background: #a8c0db;
 	margin: 0;
 	padding: 0;
+  overflow: hidden;
 }
 
 .loading {
@@ -31,22 +54,38 @@ body {
   justify-content: center;
 }
 
+.github {
+  color: #24292e;
+}
+
+.facebook {
+  color: #3b5998;
+}
+
+.linkedin {
+  color: #0077b5;
+}
+
 .icon {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+}
+
+h1, h3 {
+  color: ghostwhite;
+  display: flex;
+  justify-content: center;
+  /*font-size: 1.5em;*/
   text-shadow: 4px 4px 10px rgba(0,0,0,0.2);
 }
 
-h1 {
-  color: white;
-  margin-bottom: 0;
-  display: flex;
-  justify-content: center;
-  font-size: 1em;
-  text-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+p {
+  margin: 0;
 }
+
 
 /* Cube loader via
  * https://github.com/tobiasahlin/SpinKit
@@ -118,18 +157,19 @@ h1 {
  */
 
 .box {
-  margin: 20px;
+  margin: 0 20px;
   position: relative;
   display: inline-block;
   min-width: 70px;
   height: 70px;
-  background-color: lightslategrey;
+  /*background-color: lightslategrey;*/
   border-radius: 5px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   cursor: pointer;
+  background: rgba(255,255,255,0.3);
 }
 
 .box::after {
@@ -154,4 +194,153 @@ h1 {
 
 .box:hover::after {
     opacity: 1;
+}
+
+/* Cloud animation via:
+ * http://codepen.io/Mark_Bowley/full/xEbuI/
+ */
+
+#background-wrap {
+  bottom: 0;
+	left: 0;
+  height: 50vh;
+	padding-top: 50px;
+	position: fixed;
+	right: 0;
+	z-index: -1;
+}
+
+/* KEYFRAMES */
+
+@-webkit-keyframes animateCloud {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+@-moz-keyframes animateCloud {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+@keyframes animateCloud {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+/* ANIMATIONS */
+
+.x1 {
+	-webkit-animation: animateCloud 35s linear infinite;
+	-moz-animation: animateCloud 35s linear infinite;
+	animation: animateCloud 35s linear infinite;
+	
+	-webkit-transform: scale(0.65);
+	-moz-transform: scale(0.65);
+	transform: scale(0.65);
+}
+
+.x2 {
+	-webkit-animation: animateCloud 20s linear infinite;
+	-moz-animation: animateCloud 20s linear infinite;
+	animation: animateCloud 20s linear infinite;
+	
+	-webkit-transform: scale(0.3);
+	-moz-transform: scale(0.3);
+	transform: scale(0.3);
+}
+
+.x3 {
+	-webkit-animation: animateCloud 30s linear infinite;
+	-moz-animation: animateCloud 30s linear infinite;
+	animation: animateCloud 30s linear infinite;
+	
+	-webkit-transform: scale(0.5);
+	-moz-transform: scale(0.5);
+	transform: scale(0.5);
+}
+
+.x4 {
+	-webkit-animation: animateCloud 18s linear infinite;
+	-moz-animation: animateCloud 18s linear infinite;
+	animation: animateCloud 18s linear infinite;
+	
+	-webkit-transform: scale(0.4);
+	-moz-transform: scale(0.4);
+	transform: scale(0.4);
+}
+
+.x5 {
+	-webkit-animation: animateCloud 25s linear infinite;
+	-moz-animation: animateCloud 25s linear infinite;
+	animation: animateCloud 25s linear infinite;
+	
+	-webkit-transform: scale(0.55);
+	-moz-transform: scale(0.55);
+	transform: scale(0.55);
+}
+
+/* OBJECTS */
+
+.cloud {
+	background: #fff;
+	background: -moz-linear-gradient(top,  #fff 5%, #f1f1f1 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#fff), color-stop(100%,#f1f1f1));
+	background: -webkit-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+	background: -o-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+	background: -ms-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+	background: linear-gradient(to bottom,  #fff 5%,#f1f1f1 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#f1f1f1',GradientType=0 );
+	
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+	
+	-webkit-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+
+	height: 120px;
+	position: relative;
+	width: 350px;
+}
+
+.cloud:after, .cloud:before {
+    background: #fff;
+	content: '';
+	position: absolute;
+	z-indeX: -1;
+}
+
+.cloud:after {
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+
+	height: 100px;
+	left: 50px;
+	top: -50px;
+	width: 100px;
+}
+
+.cloud:before {
+	-webkit-border-radius: 200px;
+	-moz-border-radius: 200px;
+	border-radius: 200px;
+
+	width: 180px;
+	height: 180px;
+	right: 50px;
+	top: -90px;
 }
