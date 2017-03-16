@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Hlynur Stefánsson';
+
+  constructor() { }
+
+  goToGithub() {
+    window.open('https://github.com/hlynurstef');
+  }
+
+  gotToFacebook() {
+    window.open('https://www.facebook.com/hlynurstef');
+  }
+
+  goToLinkedin() {
+    window.open('https://www.linkedin.com/in/hlynurstef/');
+  }
 }
