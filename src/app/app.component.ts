@@ -21,4 +21,9 @@ export class AppComponent {
   goToLinkedin() {
     window.open('https://www.linkedin.com/in/hlynurstef/');
   }
+
+  mailTo() {
+    // Doesn't open a new window
+    window.location.href = 'mailto:hlynurstef@gmail.com';
+  }
 }

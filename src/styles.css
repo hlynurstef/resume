@@ -65,6 +65,13 @@ body {
   color: #0077b5;
 }
 
+.mail {
+  position: relative;
+  top: -0.1em;
+  color: ghostwhite;
+  font-size: 0.9em;
+}
+
 .icon {
   display: flex;
   justify-content: center;
